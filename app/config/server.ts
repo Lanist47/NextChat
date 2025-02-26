@@ -7,7 +7,7 @@ declare global {
     interface ProcessEnv {
       PROXY_URL?: string; // docker only
 
-      OPENAI_API_KEY?: string;
+      COSMOSRP_API_KEY?: string;
       CODE?: string;
 
       BASE_URL?: string;
