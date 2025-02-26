@@ -163,7 +163,7 @@ export const getServerSideConfig = () => {
   const isXAI = !!process.env.XAI_API_KEY;
   const isChatGLM = !!process.env.CHATGLM_API_KEY;
   const isSiliconFlow = !!process.env.SILICONFLOW_API_KEY;
-  // const apiKeyEnvVar = process.env.OPENAI_API_KEY ?? "";
+  // const apiKeyEnvVar = process.env.COSMOSRP_API_KEY ?? "";
   // const apiKeys = apiKeyEnvVar.split(",").map((v) => v.trim());
   // const randomIndex = Math.floor(Math.random() * apiKeys.length);
   // const apiKey = apiKeys[randomIndex];
@@ -177,7 +177,7 @@ export const getServerSideConfig = () => {
 
   return {
     baseUrl: process.env.BASE_URL,
-    apiKey: getApiKey(process.env.OPENAI_API_KEY),
+    apiKey: getApiKey(process.env.COSMOSRP_API_KEY),
     openaiOrgId: process.env.OPENAI_ORG_ID,
 
     isStability,
