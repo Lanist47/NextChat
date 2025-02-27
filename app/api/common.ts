@@ -38,10 +38,10 @@ export async function requestOpenai(req: NextRequest) {
     baseUrl = baseUrl.slice(0, -1);
   }
 
-  console.log("[Base Url]", baseUrl);
-
-  const fetchUrl = `${baseUrl}/${path}`;
-  console.log("[Full Request URL]", fetchUrl);
+  console.error("[Base Url]", baseUrl);
+const fetchUrl = `${baseUrl}/${path}`;
+console.error("[Full Request URL]", fetchUrl);
+console.error("[DEBUG] requestOpenai function called");
 
   const fetchOptions: RequestInit = {
     headers: {
