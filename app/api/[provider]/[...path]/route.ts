@@ -22,6 +22,7 @@ async function handle(
 ) {
   const apiPath = `/api/${params.provider}`;
   console.log(`[${params.provider} Route] params `, params);
+  console.error(`[DEBUG] Provider received in request:`, params.provider);
   switch (apiPath) {
     case ApiPath.Azure:
       return azureHandler(req, { params });
