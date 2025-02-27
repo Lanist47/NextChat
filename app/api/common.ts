@@ -24,7 +24,7 @@ export async function requestOpenai(req: NextRequest) {
     authHeaderName = "api-key";
   } else {
     authValue = "Bearer pk-aQHkcjeXQskLhIQjhGzoZDzgEJinuTFciaBkzyaZmGCzGAxy"; // <-- Вставь сюда свой ключ
-    authHeaderName = "Authorization";
+    authHeaderName = "X-API-Key"; // <-- теперь заголовок называется "X-API-Key"
   }
 
   let path = `${req.nextUrl.pathname}`.replaceAll("/api/openai/", "");
@@ -88,13 +88,16 @@ export async function requestOpenai(req: NextRequest) {
     }
   }
 
+  console.log("[Base Url]", baseUrl);
+console.log("[Full Request URL]", fetchUrl);
   const fetchUrl = cloudflareAIGatewayUrl(`${baseUrl}/${path}`);
   console.log("fetchUrl", fetchUrl);
   const fetchOptions: RequestInit = {
     headers: {
-      "Content-Type": "application/json",
-      "Cache-Control": "no-store",
-      [authHeaderName]: authValue,
+   "Content-Type": "application/json",
+   "Cache-Control": "no-store",
+   "X-API-Key": "Bearer pk-aQHkcjeXQskLhIQjhGzoZDzgEJinuTFciaBkzyaZmGCzGAxy"
+},
       ...(serverConfig.openaiOrgId && {
         "OpenAI-Organization": serverConfig.openaiOrgId,
       }),
