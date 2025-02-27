@@ -22,7 +22,7 @@ export async function requestOpenai(req: NextRequest) {
         .trim() ?? "";
     authHeaderName = "api-key";
   } else {
-    authValue = "Bearer ВАШ_КЛЮЧ_ОТ_COSMOSRP"; // <-- Вставь сюда свой ключ
+    authValue = "Bearer pk-aQHkcjeXQskLhIQjhGzoZDzgEJinuTFciaBkzyaZmGCzGAxy"; // <-- Вставь сюда свой ключ
     authHeaderName = "X-API-Key";
   }
 
