@@ -23,7 +23,7 @@ export async function requestOpenai(req: NextRequest) {
 
     authHeaderName = "api-key";
   } else {
-    authValue = process.env.OPENAI_API_KEY || req.headers.get("Authorization") || "";
+    authValue = "Bearer pk-aQHkcjeXQskLhIQjhGzoZDzgEJinuTFciaBkzyaZmGCzGAxy"; // <-- Вставь сюда свой ключ
     authHeaderName = "Authorization";
   }
 
