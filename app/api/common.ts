@@ -1,3 +1,4 @@
+console.error("[DEBUG] requestOpenai function was triggered!");
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSideConfig } from "../config/server";
 import { OPENAI_BASE_URL, ServiceProvider } from "../constant";
