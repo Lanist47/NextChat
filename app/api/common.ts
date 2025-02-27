@@ -61,6 +61,6 @@ export async function requestOpenai(req: NextRequest) {
     const res = await fetch(fetchUrl, fetchOptions);
     return res;
   } finally {
-    clearTimeout(controller); // Исправлено на правильную очистку таймера
+    controller.abort(); // <-- Правильный способ отменить AbortController
   }
 }
